@@ -28,9 +28,9 @@ class MyTopo(object):
     def run(self):
         self.net.build()
         self.net.start()
-	#self.s1.cmd('ovs-vsctl set bridge s1 protocols=OpenFlow13')
-        #self.s1.cmd('ovs-vsctl add-port s1 vxlan1')
-        #self.s1.cmd('ovs-vsctl set interface vxlan1 type=vxlan option:remote_ip=45.55.19.146 option:key=flow')
+	self.s1.cmd('ovs-vsctl set bridge s1 protocols=OpenFlow13')
+        self.s1.cmd('ovs-vsctl add-port s1 vxlan1')
+        self.s1.cmd('ovs-vsctl set interface vxlan1 type=vxlan option:remote_ip=flow option:local_ip=flow option:key=flow')
         CLI(self.net)
         self.net.stop()
  
