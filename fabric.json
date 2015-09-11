@@ -1,0 +1,25 @@
+{
+    "physical-nodes" : {
+                "c1" : {
+                               "ip" : "192.168.0.1/24",
+                               "location" : "fabric"
+                             },
+                "c2" : {
+                               "ip" : "192.168.0.2/24",
+                               "location" : "fabric"
+                             }
+                        },
+    "virtual-nets" : [ {
+                        "virtual-nodes" : 4,
+                        "location" : "colocated",
+                        "node" : "c1"
+                       },
+                       {
+                        "virtual-nodes" : 2,
+                        "location" : "custom",
+                        "nodes" : { "c1" : 1,
+                                    "c2" : 1
+                                  }
+                       } ],
+    "controller" : "45.55.19.168:6633"
+}
